@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-04-2025 a las 03:16:11
+-- Tiempo de generación: 10-04-2025 a las 07:55:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -42,7 +42,7 @@ CREATE TABLE `business_info` (
 --
 
 INSERT INTO `business_info` (`id`, `name`, `address`, `phone`, `email`, `operating_hours`, `base_shipping_fee`) VALUES
-(1, 'Marmoleo', 'Dirección de ejemplo', '123-456-7890', 'info@marmoleo.com', 'Lunes a Viernes de 9 AM a 6 PM', 50.00);
+(1, 'Marmoleo', 'Dirección de ejemplo', '123-456-7890', 'info@marmoleo.com', 'Lunes a Viernes de 9 AM a 6 PM', 500.00);
 
 -- --------------------------------------------------------
 
@@ -89,15 +89,23 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `numero_pedido`, `fecha_pedido`, `nombre_cliente`, `direccion_entrega`, `estado`, `repartidor_asignado`, `fecha_entrega_estimada`, `comentarios`, `created_at`, `updated_at`, `user_id`) VALUES
-(1, 'PEDIDO-001', '2025-03-22 06:16:50', 'Ana Pérez', 'Calle Principal #123, Ciudad A', 'Pendiente', '4', NULL, NULL, '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
-(2, 'PEDIDO-002', '2025-03-22 06:16:50', 'Juan López', 'Avenida Secundaria #456, Ciudad B', 'Entregado', '10', NULL, NULL, '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
-(3, 'PEDIDO-003', '2025-03-22 06:16:50', 'María García', 'Plaza Central #789, Ciudad C', 'Entregado', '4', '2025-03-25', NULL, '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
-(4, 'PEDIDO-004', '2025-03-22 06:16:50', 'Pedro Gómez', 'Pasaje Estrecho #101, Ciudad A', 'Entregado', '4', NULL, 'Llamar al cliente antes de la entrega.', '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
+(2, 'PEDIDO-002', '2025-03-22 06:16:50', 'Juan López', 'Avenida Secundaria #456, Ciudad B', 'Entregado', NULL, NULL, NULL, '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
+(3, 'PEDIDO-003', '2025-03-22 06:16:50', 'María García', 'Plaza Central #789, Ciudad C', 'Pendiente', '10', '2025-03-25', NULL, '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
+(4, 'PEDIDO-004', '2025-03-22 06:16:50', 'Pedro Gómez', 'Pasaje Estrecho #101, Ciudad A', 'Pendiente', '4', NULL, 'Llamar al cliente antes de la entrega.', '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
 (5, 'PEDIDO-005', '2025-03-20 16:00:00', 'Laura Vargas', 'Boulevard Norte #222, Ciudad D', 'Pendiente', '4', NULL, NULL, '2025-03-22 06:16:50', '2025-03-22 06:16:50', NULL),
 (6, 'PED001', '2025-03-26 03:00:05', 'Juan Pérez', 'Calle Principal #123, Durango', 'Pendiente', '4', NULL, NULL, '2025-03-26 03:00:05', '2025-03-26 03:00:05', NULL),
 (7, 'PED002', '2025-03-26 03:00:05', 'María López', 'Avenida Central #456, Durango', 'En camino', '10', NULL, NULL, '2025-03-26 03:00:05', '2025-03-26 03:00:05', NULL),
 (8, 'PED003', '2025-03-26 03:00:05', 'Carlos Gómez', 'Privada Los Pinos #789, Durango', 'Entregado', NULL, NULL, NULL, '2025-03-26 03:00:05', '2025-03-26 03:00:05', NULL),
-(9, 'PED004', '2025-03-26 03:00:05', 'Ana Vargas', 'Boulevard Revolución #101, Durango', 'Pendiente', NULL, NULL, NULL, '2025-03-26 03:00:05', '2025-03-26 03:00:05', NULL);
+(9, 'PED004', '2025-03-26 03:00:05', 'Ana Vargas', 'Boulevard Revolución #101, Durango', 'Pendiente', NULL, NULL, NULL, '2025-03-26 03:00:05', '2025-03-26 03:00:05', NULL),
+(10, '123', '2025-04-03 10:42:00', 'gus', 'dsads', 'Pendiente', NULL, '2025-04-26', 'sdasd', '2025-04-03 04:43:01', '2025-04-03 04:43:01', NULL),
+(12, '121', '2025-04-03 11:04:00', 'gus', 'saddsa', 'Pendiente', NULL, '2025-04-02', 'sadsd', '2025-04-03 05:05:05', '2025-04-03 05:05:05', 11),
+(17, '123456', '2025-04-03 11:10:00', 'sdas', 'sadsd', 'Pendiente', NULL, '2025-04-02', 'dsdsa', '2025-04-03 05:12:03', '2025-04-03 05:12:03', NULL),
+(18, '5466', '2025-04-03 11:13:00', 'diego', 'asdsd', 'Pendiente', NULL, '2025-04-02', 'sdads', '2025-04-03 05:13:57', '2025-04-03 05:13:57', 11),
+(19, '54666', '2025-04-03 11:13:00', 'diegoo', 'micasa', 'Pendiente', NULL, '2025-04-02', 'dsads', '2025-04-03 05:14:34', '2025-04-03 05:14:34', 11),
+(20, 'PEDIDO-1', '2025-04-03 11:28:00', 'asds', 'dsas', 'Pendiente', NULL, '2025-04-02', 'sdsa', '2025-04-03 05:28:49', '2025-04-03 05:28:49', NULL),
+(21, '9999999', '2025-04-03 15:26:56', 'diegoyo', 'micasa', 'En camino', NULL, '2025-04-03', 'nada', '2025-04-03 15:26:56', '2025-04-03 15:26:56', 11),
+(22, '00000', '2025-04-03 15:56:59', 'gustambo', 'micasa', 'En camino', NULL, '2025-04-03', 'andas', '2025-04-03 15:56:59', '2025-04-03 15:56:59', 15),
+(23, '111111', '2025-04-03 16:42:41', 'alexis', 'mi casa', 'Pendiente', NULL, '2025-04-03', 'encorto ntc', '2025-04-03 16:42:41', '2025-04-03 16:42:41', 19);
 
 -- --------------------------------------------------------
 
@@ -147,15 +155,15 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `phone`, `name`, `email`, `username`, `password`, `creationDate`, `role`) VALUES
 (4, '1022932004', 'Alejandro Vanegas', 'luisalejandroburitica@gmail.com', 'AlejowDev', '$2b$10$lHl2exYHfRlcZMq93OUjL.Y/SqekbezUZpTOxxa7FdURCufZpmHL6', '2024-11-13 21:09:26', 'moderator'),
-(5, '13123123', 'prueba', 'prueba@gmail.com', 'prueba', '$2b$10$7EZc0BBej/KNEuKniVAhiesP5VI0Da8f2g/Baqx/dRTSZVZzpdAgW', '2024-11-13 21:31:17', 'admin'),
-(8, '12345', 'Alexis', 'Alexis@gmail.com', 'Alexis Rios', '$2b$10$3PmPvhIt1GcU8I.HPauSwOtxm4aCLISByP690Q5VeJ0phymFGvENO', '2025-03-24 19:15:40', 'admin'),
+(8, '6183278875', 'Alexis', 'Alexis1@gmail.com', 'Alexis Rios', '$2b$10$3PmPvhIt1GcU8I.HPauSwOtxm4aCLISByP690Q5VeJ0phymFGvENO', '2025-03-24 19:15:40', 'admin'),
 (10, '12345', 'imara', 'imara@gmail.com', 'imara aleman', '$2b$10$d6dLT616HyVnVhRXtI3HYuqWDHxgVHMwbi9E4Pla5ocn5EzHC.K/a', '2025-03-24 19:35:16', 'moderator'),
 (11, '12345', 'diego', 'diego@gmail.com', 'Diego Rios', '$2b$10$YSo.QZnnfBOnJurQD8ycfelIIrEgb2BUUWGGK5URb7bLvrhi/wtBK', '2025-03-24 19:39:23', 'user'),
-(12, '123456', 'hola', 'diego@gmail.com', 'hola k ase', '123456', '2025-03-27 01:20:09', ''),
+(12, '123456', 'hola', 'diego@gmail.com', 'hola k ase', '123456', '2025-03-27 01:20:09', 'moderator'),
 (15, '12345', 'Gustambo Champaña', 'gustavo@nigga.com', 'Gustambo', '$2b$10$jz6UkmxtfV6JPlcWe1K1GuajyolpE.bFpS527pxKsDKIHSIZdvLqS', '2025-03-28 05:17:45', 'user'),
 (16, '12345', 'imara', 'imara@gmail.com', 'iimara', '$2b$10$nVaJ7FBD6mn1v61XALlvgOe4d8mFvpzKEpSUxl.6tc7IfLkihl3au', '2025-03-31 18:36:02', 'user'),
 (17, '12345', 'imara', 'imara1@gmail.com', 'iimara', '$2b$10$kiFrWd8aZkZrgm3iWymA0uXIGMcmk.ArL6g.fmFQNktId2KNJ0QLG', '2025-03-31 18:39:10', 'user'),
-(18, '12345', 'alfredo', 'alf@gmail.com', 'alfredo solis', '$2b$10$.wss3SZHxNkY8lAP5Pjoy.Mf7Nwltu/NRmd30K7amzW3m7yLICAbS', '2025-03-31 18:39:39', 'user');
+(18, '12345', 'alfredo', 'alf@gmail.com', 'alfredo solis', '$2b$10$.wss3SZHxNkY8lAP5Pjoy.Mf7Nwltu/NRmd30K7amzW3m7yLICAbS', '2025-03-31 18:39:39', 'user'),
+(19, '6183278875', 'Alexis Torres', 'diegoalexis@gmail.com', 'alexis torres', '$2b$10$3C.T3U0Ksxl.isJDAhSolOMC/g4/WCFF7ONG3fdYBsZcBh7JQMg1y', '2025-04-03 16:40:00', 'user');
 
 --
 -- Índices para tablas volcadas
@@ -214,7 +222,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -226,7 +234,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas
